@@ -8,7 +8,7 @@ const Home = () => {
   useEffect(() => {
     const fetchSongs = async () => {
       try {
-        const response = await axios.get('https://musicstream-92cd.onrender.com');
+        const response = await axios.get('https://musicstream-92cd.onrender.com/api/songs');
         setSongs(response.data.map(song => ({
           ...song,
           cover: `https://musicstream-92cd.onrender.com${song.cover}`,
