@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "1.0.0",
-  "homepage": "https://surajrameshgowda4431-hue.github.io/musicstream",
+ 
   "private": true,
   "dependencies": {
     "@stripe/react-stripe-js": "^2.0.0",
