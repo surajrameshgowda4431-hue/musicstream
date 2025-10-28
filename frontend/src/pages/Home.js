@@ -8,11 +8,12 @@ const Home = () => {
   useEffect(() => {
     const fetchSongs = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/songs');
+        const response = await axios.get('https://musicstream-92cd.onrender.com');
         setSongs(response.data.map(song => ({
           ...song,
-          cover: `http://localhost:5000${song.cover}`,
-          url: `http://localhost:5000${song.url}`
+          cover: `https://musicstream-92cd.onrender.com${song.cover}`,
+url: `https://musicstream-92cd.onrender.com${song.url}`
+
         })));
       } catch (error) {
         console.error('Error fetching songs:', error);

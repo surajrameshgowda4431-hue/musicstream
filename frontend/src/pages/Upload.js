@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const BACKEND_URL = 'http://localhost:5000';
+const BACKEND_URL = 'https://musicstream-92cd.onrender.com';
 
 const Upload = () => {
   const [title, setTitle] = useState('');

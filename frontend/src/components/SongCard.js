@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./SongCard.css";
 
-const API_BASE = "http://localhost:5000";
+const API_BASE = "https://musicstream-92cd.onrender.com";
 
 const SongCard = ({ song }) => {
   const [showModal, setShowModal] = useState(false);
