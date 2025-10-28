@@ -4,6 +4,10 @@ const multer = require('multer');
 const path = require('path');
 require('dotenv').config();
 const app = express();
+const path = require("path");
+
+// Serve the "songs" folder publicly
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 app.use(cors());
 app.use(express.json());
@@ -51,5 +55,5 @@ app.post('/api/upload', upload.fields([{ name: 'song' }, { name: 'cover' }]), (r
 const paymentRoutes = require('./routes/payment');
 app.use('/api/payment', paymentRoutes);
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Backend running on port ${PORT}`));
