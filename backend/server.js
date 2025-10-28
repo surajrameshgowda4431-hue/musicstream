@@ -4,7 +4,7 @@ const multer = require('multer');
 const path = require('path');
 require('dotenv').config();
 const app = express();
-const path = require("path");
+
 
 // Serve the "songs" folder publicly
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
