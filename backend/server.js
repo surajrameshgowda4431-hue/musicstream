@@ -56,4 +56,9 @@ const paymentRoutes = require('./routes/payment');
 app.use('/api/payment', paymentRoutes);
 
 const PORT = process.env.PORT || 5000;
+// Root route for Render test
+app.get("/", (req, res) => {
+  res.send("🎵 MusicStream backend is running successfully!");
+});
+
 app.listen(PORT, () => console.log(`Backend running on port ${PORT}`));
