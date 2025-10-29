@@ -12,17 +12,17 @@ const CurrentPlaying = () => {
   const [currentIndex, setCurrentIndex] = useState(-1);
   const [songs, setSongs] = useState([]);
 
-  // Use static songs for Vercel deployment
+  // Use songs from Render backend
   useEffect(() => {
     const staticSongs = [
-      { title: "Danza Kuduro", artist: "Don Omar", cover: "/assets/cover1.jpg", url: "/assets/song1.mp3" },
-      { title: "Despacito", artist: "Luis Fonsi", cover: "/assets/cover2.jpg", url: "/assets/song2.mp3" },
-      { title: "Fly Away", artist: "Lenny Kravitz", cover: "/assets/cover3.jpg", url: "/assets/song3.mp3" },
-      { title: "Gasolina", artist: "Daddy Yankee", cover: "/assets/cover4.jpg", url: "/assets/song4.mp3" },
-      { title: "Grateful", artist: "DJ Khaled", cover: "/assets/cover5.jpg", url: "/assets/song5.mp3" },
-      { title: "I Can Feel It", artist: "DJ Snake", cover: "/assets/cover6.jpg", url: "/assets/song6.mp3" },
-      { title: "Perfect", artist: "Ed Sheeran", cover: "/assets/cover7.jpg", url: "/assets/song7.mp3" },
-      { title: "Shape Of You", artist: "Ed Sheeran", cover: "/assets/cover8.jpg", url: "/assets/song8.mp3" }
+      { title: "Danza Kuduro", artist: "Don Omar", cover: "https://musicstream-92cd.onrender.com/uploads/cover1.jpg", url: "https://musicstream-92cd.onrender.com/uploads/danza_kuduro.mp3" },
+      { title: "Despacito", artist: "Luis Fonsi", cover: "https://musicstream-92cd.onrender.com/uploads/cover2.jpg", url: "https://musicstream-92cd.onrender.com/uploads/despacito.mp3" },
+      { title: "Fly Away", artist: "Lenny Kravitz", cover: "https://musicstream-92cd.onrender.com/uploads/cover3.jpg", url: "https://musicstream-92cd.onrender.com/uploads/fly_away.mp3" },
+      { title: "Gasolina", artist: "Daddy Yankee", cover: "https://musicstream-92cd.onrender.com/uploads/cover4.jpg", url: "https://musicstream-92cd.onrender.com/uploads/gasolina.mp3" },
+      { title: "Grateful", artist: "DJ Khaled", cover: "https://musicstream-92cd.onrender.com/uploads/cover5.jpg", url: "https://musicstream-92cd.onrender.com/uploads/grateful.mp3" },
+      { title: "I Can Feel It", artist: "DJ Snake", cover: "https://musicstream-92cd.onrender.com/uploads/cover6.jpg", url: "https://musicstream-92cd.onrender.com/uploads/i_can_feel_it.mp3" },
+      { title: "Perfect", artist: "Ed Sheeran", cover: "https://musicstream-92cd.onrender.com/uploads/cover7.jpg", url: "https://musicstream-92cd.onrender.com/uploads/perfect.mp3" },
+      { title: "Shape Of You", artist: "Ed Sheeran", cover: "https://musicstream-92cd.onrender.com/uploads/cover8.jpg", url: "https://musicstream-92cd.onrender.com/uploads/Shape_Of_You.mp3" }
     ];
     setSongs(staticSongs);
   }, []);
