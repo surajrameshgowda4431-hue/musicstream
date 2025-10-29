@@ -3,14 +3,14 @@ import axios from "axios";
 import "./Home.css";
 
 const staticSongs = [
-  { title: "Danza Kuduro", artist: "Don Omar", cover: "/assets/cover1.jpg", url: "/assets/song1.mp3" },
-  { title: "Despacito", artist: "Luis Fonsi", cover: "/assets/cover2.jpg", url: "/assets/song2.mp3" },
-  { title: "Fly Away", artist: "Lenny Kravitz", cover: "/assets/cover3.jpg", url: "/assets/song3.mp3" },
-  { title: "Gasolina", artist: "Daddy Yankee", cover: "/assets/cover4.jpg", url: "/assets/song4.mp3" },
-  { title: "Grateful", artist: "DJ Khaled", cover: "/assets/cover5.jpg", url: "/assets/song5.mp3" },
-  { title: "I Can Feel It", artist: "DJ Snake", cover: "/assets/cover6.jpg", url: "/assets/song6.mp3" },
-  { title: "Perfect", artist: "Ed Sheeran", cover: "/assets/cover7.jpg", url: "/assets/song7.mp3" },
-  { title: "Shape Of You", artist: "Ed Sheeran", cover: "/assets/cover8.jpg", url: "/assets/song8.mp3" }
+  { title: "Danza Kuduro", artist: "Don Omar", cover: "/musicstream/assets/cover1.jpg", url: "/musicstream/assets/song1.mp3" },
+  { title: "Despacito", artist: "Luis Fonsi", cover: "/musicstream/assets/cover2.jpg", url: "/musicstream/assets/song2.mp3" },
+  { title: "Fly Away", artist: "Lenny Kravitz", cover: "/musicstream/assets/cover3.jpg", url: "/musicstream/assets/song3.mp3" },
+  { title: "Gasolina", artist: "Daddy Yankee", cover: "/musicstream/assets/cover4.jpg", url: "/musicstream/assets/song4.mp3" },
+  { title: "Grateful", artist: "DJ Khaled", cover: "/musicstream/assets/cover5.jpg", url: "/musicstream/assets/song5.mp3" },
+  { title: "I Can Feel It", artist: "DJ Snake", cover: "/musicstream/assets/cover6.jpg", url: "/musicstream/assets/song6.mp3" },
+  { title: "Perfect", artist: "Ed Sheeran", cover: "/musicstream/assets/cover7.jpg", url: "/musicstream/assets/song7.mp3" },
+  { title: "Shape Of You", artist: "Ed Sheeran", cover: "/musicstream/assets/cover8.jpg", url: "/musicstream/assets/song8.mp3" }
 ];
 
 const Home = () => {
