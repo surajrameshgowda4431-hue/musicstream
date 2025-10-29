@@ -28,14 +28,24 @@ const CurrentPlaying = () => {
   }, []);
 
   useEffect(() => {
-    const playHandler = (e) => {
+    const playHandler = async (e) => {
       const song = e.detail;
+      console.log('Playing song:', song);
       setCurrentSong(song);
       const index = songs.findIndex((s) => s.url === song.url);
       setCurrentIndex(index);
-      audioRef.current.src = song.url;
-      audioRef.current.play();
-      setIsPlaying(true);
+      
+      try {
+        audioRef.current.src = song.url;
+        audioRef.current.crossOrigin = "anonymous";
+        await audioRef.current.load();
+        await audioRef.current.play();
+        setIsPlaying(true);
+        console.log('Song started playing');
+      } catch (error) {
+        console.error('Error playing song:', error);
+        setIsPlaying(false);
+      }
     };
     window.addEventListener("playSong", playHandler);
     return () => window.removeEventListener("playSong", playHandler);
