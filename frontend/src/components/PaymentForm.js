@@ -18,7 +18,7 @@ const PaymentForm = ({ amount, onSuccess, onCancel }) => {
 
     try {
       // Create payment intent
-      const response = await fetch('https://musicstream-92cd.onrender.com', {
+      const response = await fetch('https://musicstream-92cd.onrender.com/api/payment/create-payment-intent', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ amount, paymentMethod })
