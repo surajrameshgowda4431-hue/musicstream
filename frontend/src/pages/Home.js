@@ -16,6 +16,9 @@ const staticSongs = [
 const Home = () => {
   const [songs, setSongs] = useState(staticSongs);
 
+  // For GitHub Pages deployment, use static songs only
+  // Comment out API call to prevent overriding static data
+  /*
   useEffect(() => {
     const fetchSongs = async () => {
       try {
@@ -32,6 +35,7 @@ const Home = () => {
     };
     fetchSongs();
   }, []);
+  */
 
   const handlePlay = (song) => {
     const event = new CustomEvent("playSong", { detail: song });
