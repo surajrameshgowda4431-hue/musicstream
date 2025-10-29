@@ -15,14 +15,26 @@ const CurrentPlaying = () => {
   useEffect(() => {
     const fetchSongs = async () => {
       try {
-        const response = await axios.get('https://musicstream-92cd.onrender.com');
+        const response = await axios.get('https://musicstream-92cd.onrender.com/api/songs');
         setSongs(response.data.map(song => ({
           ...song,
-         cover: `https://musicstream-92cd.onrender.com${song.cover}`,
-    url: `https://musicstream-92cd.onrender.com${song.url}`
+          cover: song.cover.startsWith('http') ? song.cover : `/assets/${song.cover.split('/').pop()}`,
+          url: song.url.startsWith('http') ? song.url : `/assets/${song.url.split('/').pop()}`
         })));
       } catch (error) {
-        console.error('Error fetching songs:', error);
+        console.error('Error fetching songs, using static data:', error);
+        // Fallback to static songs
+        const staticSongs = [
+          { title: "Danza Kuduro", artist: "Don Omar", cover: "/assets/cover1.jpg", url: "/assets/song1.mp3" },
+          { title: "Despacito", artist: "Luis Fonsi", cover: "/assets/cover2.jpg", url: "/assets/song2.mp3" },
+          { title: "Fly Away", artist: "Lenny Kravitz", cover: "/assets/cover3.jpg", url: "/assets/song3.mp3" },
+          { title: "Gasolina", artist: "Daddy Yankee", cover: "/assets/cover4.jpg", url: "/assets/song4.mp3" },
+          { title: "Grateful", artist: "DJ Khaled", cover: "/assets/cover5.jpg", url: "/assets/song5.mp3" },
+          { title: "I Can Feel It", artist: "DJ Snake", cover: "/assets/cover6.jpg", url: "/assets/song6.mp3" },
+          { title: "Perfect", artist: "Ed Sheeran", cover: "/assets/cover7.jpg", url: "/assets/song7.mp3" },
+          { title: "Shape Of You", artist: "Ed Sheeran", cover: "/assets/cover8.jpg", url: "/assets/song8.mp3" }
+        ];
+        setSongs(staticSongs);
       }
     };
     fetchSongs();
